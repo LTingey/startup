@@ -1,2 +1,2 @@
 # startup
-startup project for CS260
+startup project for CS2600
