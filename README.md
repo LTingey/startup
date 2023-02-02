@@ -1,4 +1,4 @@
-# startup
+# Startup
 **startup project for CS260: Map Your Travels**
 
 
@@ -16,4 +16,5 @@ Key Features
 ## Notes
 What I learned from GitHub assignment: fetch then pull and stage, commit, push \
 My IP address: 3.133.80.15 \
-How to SSH into my server: `ssh -i ~/Desktop/cs260/production.pem ubuntu@3.133.80.15`
+How to SSH into my server: `ssh -i ~/Desktop/cs260/production.pem ubuntu@3.133.80.15` \
+After changing files in the server, don't forget to restart Caddy: `sudo service caddy restart`
