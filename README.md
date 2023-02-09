@@ -16,6 +16,9 @@ Key Features
 ## Notes
 What I learned from GitHub assignment: fetch then pull and stage, commit, push \
 My IP address: 3.133.80.15 \
+My domain: tingey.click \
 How to SSH into my server: `ssh -i ~/Desktop/cs260/production.pem ubuntu@3.133.80.15` \
-After changing files in the server, don't forget to restart Caddy: `sudo service caddy restart` \
-Deploy to server: `./deployWebsite.sh  -k ~/Desktop/cs260/production.pem -h 3.133.80.25`
+After changing files in the server, **don't forget to restart Caddy**: `sudo service caddy restart` \
+Deploy to server: `./deployWebsite.sh  -k ~/Desktop/cs260/production.pem -h 3.133.80.25` \
+Deploy to Simon: `./deployFiles.sh -k ~/Desktop/cs260/production.pem -h tingey.click -s simon` \
+What I learned from Simon assignment: I really need to learn more about svg, Caddy needs one of the files to be named index.html
