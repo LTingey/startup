@@ -13,7 +13,9 @@ Key Features
 * Save states
 * Notifies when others have selected a state
 
+
 ## Notes
+
 #### Server Stuff
 What I learned from GitHub assignment: fetch then pull and stage, commit, push \
 My IP address: 3.133.80.15 \
@@ -21,7 +23,16 @@ My domain: tingey.click \
 How to SSH into my server: `ssh -i ~/Desktop/cs260/production.pem ubuntu@3.133.80.15` \
 After changing files in the server, **don't forget to restart Caddy**: `sudo service caddy restart` \
 Deploy to server: `./deployWebsite.sh  -k ~/Desktop/cs260/production.pem -h 3.133.80.25` \
-Deploy to Simon: `./deployFiles.sh -k ~/Desktop/cs260/production.pem -h tingey.click -s simon` \
-What I learned from Simon assignment: I really need to learn more about svg, Caddy needs one of the files to be named index.html \
+Deploy to Simon: `./deployFiles.sh -k ~/Desktop/cs260/production.pem -h tingey.click -s simon`
+
+#### HTML
+What I learned from Simon HTML assignment: I really need to learn more about svg, Caddy needs one of the files to be named index.html
+
 #### CSS
-**Flex:** `align-content` determines the spacing between lines, while `align-items` determines how the items as a whole are aligned within the container \
+Flex: `align-content` determines the spacing between lines, while `align-items` determines how the items as a whole are aligned within the container \
+What I learned from Simon CSS assignment: There is just too much stuff to remember so multiple reference pages need to be open \
+**References** \
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox
+https://www.w3schools.com/bootstrap/bootstrap_ref_all_classes.asp
+https://bootstrap.build/
