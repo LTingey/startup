@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-color: lightgray;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+header {
+    height: 65px;
+}
+
+.navbar {
+    border-bottom: thick solid #011a30;
+    background-color: #002868;
+    height: 65px;
+}
+
+.navbar-brand {
+    color: lightgray !important;
+    padding-left: 15px;
+    font-size:large;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row !important;
+}
+
+.nav-item {
+    padding: 15px;
+    color: lightgray !important;
+}
+
+main {
+    flex: 4;
+    text-align: center;
+    height: 100%;
+}
+
+#profile-main {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#profile-main aside {
+    flex: 1;
+    background-color: grey;
+
+}
+
+#profile-main section {
+    flex: 4;
+}
+
+h2 {
+    color: #011a30;
+    flex: 1;
+    padding: 15px;
+}
+
+h4 {
+    color: #011a30;
+    padding-top: 15px;
+}
+
+.login-entry {
+    padding: 10px;
+}
+
+#states-list {
+    text-align: left;
+    padding-left: 33%;
+}
+
+footer {
+    background-color:#002868;
+    height: 40px;
+}
+
+
+
+
+                
+/* add viewport adaptability to map */
+
+  
+  
+path.state:hover {
+    fill: #780707 !important;
+    cursor: pointer;
+}
+  
