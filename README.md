@@ -23,7 +23,8 @@ My domain: tingey.click \
 How to SSH into my server: `ssh -i ~/Desktop/cs260/production.pem ubuntu@3.133.80.15` \
 After changing files in the server, **don't forget to restart Caddy**: `sudo service caddy restart` \
 Deploy to server: `./deployWebsite.sh  -k ~/Desktop/cs260/production.pem -h 3.133.80.25` \
-Deploy to Simon: `./deployFiles.sh -k ~/Desktop/cs260/production.pem -h tingey.click -s simon`
+Deploy to Simon: `./deployFiles.sh -k ~/Desktop/cs260/production.pem -h tingey.click -s simon` \
+Deploy to Startup: `./deployFiles.sh -k ~/Desktop/cs260/production.pem -h tingey.click -s startup`
 
 #### HTML
 What I learned from Simon HTML assignment: I really need to learn more about svg, Caddy needs one of the files to be named index.html
