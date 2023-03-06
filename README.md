@@ -37,3 +37,6 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_
 https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox
 https://www.w3schools.com/bootstrap/bootstrap_ref_all_classes.asp
 https://bootstrap.build/
+
+#### JS
+What I learned from Simon JS assignment: localStorage.setItem() lets you store data like usernames and passwords
