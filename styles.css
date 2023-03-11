@@ -17,6 +17,15 @@ header {
     height: 65px;
 }
 
+main {
+    /* flex: 4;                                      Is this needed? */
+    text-align: center;
+    height: 100%;
+}
+
+
+/* index.html */
+
 .navbar {
     border-bottom: thick solid #011a30;
     background-color: #002868;
@@ -39,11 +48,22 @@ header {
     color: lightgray !important;
 }
 
-main {
-    flex: 4;
-    text-align: center;
-    height: 100%;
+.login-entry {
+    padding: 10px;
 }
+
+
+/* map.html */
+
+.state {
+    fill: dimgrey;
+}
+.borders {
+    stroke:#FFFFFF; stroke-width:1
+}
+
+
+/* profile.html */
 
 #profile-main {
     display: flex;
@@ -57,12 +77,12 @@ main {
 }
 
 #profile-main section {
-    flex: 4;
+    flex: 4;         
 }
 
 h2 {
     color: #011a30;
-    flex: 1;
+    /* flex: 1;                                        Is this needed? */
     padding: 15px;
 }
 
@@ -71,12 +91,8 @@ h4 {
     padding-top: 15px;
 }
 
-.login-entry {
-    padding: 10px;
-}
-
 #states-list {
-    text-align: left;
+    text-align: left;   /* fix this cuz it will look weird in different viewports */
     padding-left: 33%;
 }
 
@@ -84,8 +100,6 @@ footer {
     background-color:#002868;
     height: 40px;
 }
-
-
 
 
                 
@@ -98,3 +112,6 @@ path.state:hover {
     cursor: pointer;
 }
   
+path.state:active {
+    fill: #011a30 !important;
+}
