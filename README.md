@@ -183,6 +183,9 @@ Classes
   - parameters that need to be passed to the parent class are delivered using the `super` function
   - parent functions can be accessed using the `super` keyword
 
+convert JS to JSON: `JSON.stringify()` \
+convert JSON to JS: `JSON.parse()`
+
 _regular expressions:_ textual pattern matchers; use to find text in a string \
 `const petRegex = /(dog)|(cat)|(bird)/gim` \
 `rest` allows a function to take in an unknown number of parameters as an array \
