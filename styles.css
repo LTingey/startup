@@ -77,12 +77,11 @@ main {
 }
 
 #profile-main section {
-    flex: 4;         
+    flex: 4;
 }
 
 h2 {
     color: #011a30;
-    /* flex: 1;                                        Is this needed? */
     padding: 15px;
 }
 
@@ -93,6 +92,9 @@ h4 {
 
 #states-list {
     text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    max-height: 80%;
 }
 
 footer {
