@@ -45,6 +45,9 @@ main {
 
 .nav-item {
     padding: 15px;
+}
+
+.nav-item > a {
     color: lightgray !important;
 }
 
@@ -100,6 +103,10 @@ h4 {
 footer {
     background-color:#002868;
     height: 40px;
+}
+
+footer > p {
+    color: lightgray !important;
 }
 
 
