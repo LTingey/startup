@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-color: lightgray;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+header {
+    height: 65px;
+}
+
+main {
+    /* flex: 4;                                      Is this needed? */
+    text-align: center;
+    height: 100%;
+}
+
+
+/* index.html */
+
+.navbar {
+    border-bottom: thick solid #011a30;
+    background-color: #002868;
+    height: 65px;
+}
+
+.navbar-brand {
+    color: lightgray !important;
+    padding-left: 15px;
+    font-size:large;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row !important;
+}
+
+.nav-item {
+    padding: 15px;
+}
+
+.nav-item > a {
+    color: lightgray !important;
+}
+
+.login-entry {
+    padding: 10px;
+}
+
+
+/* map.html */
+
+.state {
+    fill: dimgrey;
+}
+.borders {
+    stroke:#FFFFFF; stroke-width:1
+}
+
+
+/* profile.html */
+
+#profile-main {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#profile-main aside {
+    flex: 1;
+    background-color: grey;
+
+}
+
+#profile-main section {
+    flex: 4;
+}
+
+h2 {
+    color: #011a30;
+    padding: 15px;
+}
+
+h4 {
+    color: #011a30;
+    padding-top: 15px;
+}
+
+#states-list {
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    max-height: 80%;
+}
+
+footer {
+    background-color:#002868;
+    height: 40px;
+}
+
+footer > p {
+    color: lightgray !important;
+}
+
+
+                
+/* add viewport adaptability to map */
+
+  
+  
+path.state:hover {
+    fill: #780707 !important;
+    cursor: pointer;
+}
+  
+path.state:active {
+    fill: #011a30 !important;
+}
