@@ -333,3 +333,8 @@ stores arrays of objects, each with a unique ID, in a collection  \
 the `.find` function on a collection is asynchronous \
 connection string to cluster: `mongodb+srv://<username>:<password>@<hostname>` \
 store username, password, and hostname as environment variables on computer and on server so they don't get stolen
+
+**Authentication** \
+store authentication token in a cookie \
+use `uuid` package to randomly generate a unique ID \
+use `bcrypt` package to encrypt passwords
