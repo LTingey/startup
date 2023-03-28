@@ -35,8 +35,8 @@ My domain: tingey.click \
 How to SSH into my server: `ssh -i ~/Desktop/cs260/production.pem ubuntu@3.133.80.15` \
 After changing files in the server, **don't forget to restart Caddy**: `sudo service caddy restart` \
 Deploy to server: `./deployWebsite.sh  -k ~/Desktop/cs260/production.pem -h 3.133.80.25` \
-Deploy to Simon: `./deployFiles.sh -k ~/Desktop/cs260/production.pem -h tingey.click -s simon` \
-Deploy to Startup: `./deployFiles.sh -k ~/Desktop/cs260/production.pem -h tingey.click -s startup`
+Deploy to Simon: `./deployService.sh -k ~/Desktop/cs260/production.pem -h tingey.click -s simon` \
+Deploy to Startup: `./deployService.sh -k ~/Desktop/cs260/production.pem -h tingey.click -s startup`
 
 ### HTML
 Hypertext Markup Language \
@@ -298,9 +298,32 @@ install packages: `npm install` \
 uninstall packages: `npm uninstall` \
 IMPORTANT: make sure the `.gitignore` file contains `node_modules/` 
 
+**Express** \
 Express allows:
 - routing requests for service endpoints
 - manipulating HTTP requests with JSON body content
 - generating HTTP responses
 - using middleware to add functionality
 
+How to make an express application:
+```JavaScript
+const express = require('express');
+const app = express();
+```
+
+Routing Functions
+- supports HTTP verbs as functions on the object
+- called only if the pattern matches
+- `app.get(<url path>, (req, res, next) => {})`
+
+Middleware
+- called for every HTTP request unless a previous middle ware function does not call `next`
+- write your own: `app.use((req, res, next)) => {next();}`
+
+daemon: keeps programs running after a shutdown \
+PM2 (Process Manager 2)
+
+What I learned from Simon Service Assignment: \
+put all the front-end code files into a folder called `public` \
+middleware that serves `public` to the browser: `app.use(express.static(‘public’)` \
+automatically parse incoming requests: `app.use(express.json())`
