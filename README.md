@@ -299,7 +299,7 @@ uninstall packages: `npm uninstall` \
 IMPORTANT: make sure the `.gitignore` file contains `node_modules/` 
 
 **Express** \
-Express allows:
+allows:
 - routing requests for service endpoints
 - manipulating HTTP requests with JSON body content
 - generating HTTP responses
@@ -323,7 +323,13 @@ Middleware
 daemon: keeps programs running after a shutdown \
 PM2 (Process Manager 2)
 
-What I learned from Simon Service Assignment: \
 put all the front-end code files into a folder called `public` \
 middleware that serves `public` to the browser: `app.use(express.static(‘public’)` \
 automatically parse incoming requests: `app.use(express.json())`
+
+**MongoDB** \
+uses JSON objects as its core data model \
+stores arrays of objects, each with a unique ID, in a collection  \
+the `.find` function on a collection is asynchronous \
+connection string to cluster: `mongodb+srv://<username>:<password>@<hostname>` \
+store username, password, and hostname as environment variables on computer and on server so they don't get stolen
