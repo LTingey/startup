@@ -338,3 +338,11 @@ store username, password, and hostname as environment variables on computer and 
 store authentication token in a cookie \
 use `uuid` package to randomly generate a unique ID \
 use `bcrypt` package to encrypt passwords
+
+**WebSocket** \
+an open connection between the client and the server \
+now the server can send data to the client whenever without a request \
+how to create a websocketserver that listens on port 9900: `const socket = new WebSocket('ws://localhost:9900')` \
+use `.send` function to send messages \
+use `.onmessage` function to receive messages \
+use `ping` and `pong` to keep the connections alive 
