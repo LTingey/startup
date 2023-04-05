@@ -23,8 +23,7 @@ main {
     height: 100%;
 }
 
-
-/* index.html */
+/* navbar */
 
 .navbar {
     border-bottom: thick solid #011a30;
@@ -51,10 +50,15 @@ main {
     color: lightgray !important;
 }
 
+/* index.html */
+
 .login-entry {
     padding: 10px;
 }
 
+#errorMessage {
+    color: red;
+}
 
 /* map.html */
 
@@ -99,6 +103,8 @@ h4 {
     flex-flow: column wrap;
     max-height: 80%;
 }
+
+/* footer */
 
 footer {
     background-color:#002868;
