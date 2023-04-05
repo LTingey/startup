@@ -31,7 +31,7 @@
         <main>
             <div id="login-info">
                 <h1>Sign In</h1>
-                <form method="get" action="map.html">
+                <div>
                     <div class="login-entry">
                         <label for="name">Name</label>
                         <input type="text" id="name" />
@@ -46,9 +46,11 @@
                     </div>
                     <button type="submit" class="btn btn-primary" id="login-button" onclick="login()">Login</button>
                     <button type="submit" class="btn btn-secondary" id="login-button" onclick="newUser()">New User</button>
-                </form>
+                </div>
             </div>
-            
+            <div>
+                <p id="errorMessage"></p>
+            </div>
         </main>
 
         <footer>
