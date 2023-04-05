@@ -1,4 +1,6 @@
 const {MongoClient} = require('mongodb');
+const bcrypt = require('bcrypt');
+const uuid = require('uuid');
 
 const userName = process.env.MONGOUSER;
 const password = process.env.MONGOPASSWORD;
@@ -11,11 +13,30 @@ if (!userName) {
 const url = `mongodb+srv://${userName}:${password}@${hostname}`;
 
 const client = new MongoClient(url);
+const userCollection = client.db('startup').collection('user');
 const statesCollection = client.db('startup').collection('states');
 
 
+async function createUser(email,name,password) {
+    const passwordHash = await bcrypt.hash(password, 10);
+    const user = {
+        email: email,
+        name: name,
+        password: passwordHash,
+        token: uuid.v4(),
+    }
+    await userCollection.insertOne(user);
+    return user;
+}
+
+function getUser(email) {
+    return userCollection.findOne({ email: email});
+}
+
+
+
 function createList(listObject) {
-    statesCollection.insertOne(listObject);
+    return statesCollection.insertOne(listObject);
 }
 
 async function updateList(id, list) {
@@ -24,7 +45,7 @@ async function updateList(id, list) {
         createList({user: id, states, list});
     }
     else {
-        statesCollection.findOneAndUpdate({user: id}, {$set: {states: list}});
+        return statesCollection.findOneAndUpdate({user: id}, {$set: {states: list}});
     }
 }
 
@@ -34,4 +55,4 @@ async function getList(id) {
     return userObject;      
 }
 
-module.exports = {updateList, getList, createList};
+module.exports = {createUser, getUser, updateList, getList, createList};
