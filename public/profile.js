@@ -1,16 +1,35 @@
-function loadList() {
+async function loadList() {
     let statesList = [];
-    if (localStorage.getItem('statesArray')) {
-        statesList = JSON.parse(localStorage.getItem('statesArray'));
+    // if (localStorage.getItem('statesArray')) {
+    //     statesList = JSON.parse(localStorage.getItem('statesArray'));
+    // }
+
+    try {
+        const id = getUserEmail();
+        const statesObject = await fetch(`/api/userList/${id}`).then(response => response.json());
+        statesList = statesObject.states;
+
+        //localStorage.setItem('listBackup', JSON.stringify(statesList));    // save list in case we go offline
+    }
+    catch {
+        const statesText = localStorage.getItem('statesArray')
+        if (statesText) {
+            statesList = JSON.parse(statesText);
+        }
     }
 
     const statesListEl = document.getElementById('states-list');
 
-    statesList.forEach(state => {
+    if (statesList.length) {
+        statesList.forEach(state => {
         const newState = document.createElement('p');
         newState.textContent = state;
         statesListEl.appendChild(newState);
-    })
+        })
+    }
+    else {
+        statesListEl.innerHTML = '<p>When you select states on your map, they will appear here</p>';
+    }
 }
 
 function loadProfile() {
