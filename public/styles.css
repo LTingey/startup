@@ -62,6 +62,19 @@ main {
 
 /* map.html */
 
+.mainArea {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.userMessages {
+    flex: 1;
+}
+
+.map {
+    flex: 9;
+}
+
 .state {
     fill: dimgrey;
 }
