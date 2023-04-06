@@ -42,7 +42,7 @@ function createList(listObject) {
 async function updateList(id, list) {
     const objectExists = await statesCollection.findOne({user: id});
     if (!objectExists) {
-        createList({user: id, states, list});
+        createList({user: id, states: list});
     }
     else {
         return statesCollection.findOneAndUpdate({user: id}, {$set: {states: list}});
