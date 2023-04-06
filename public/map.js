@@ -1,13 +1,6 @@
 let statesSet;
+let socket;
 const email = localStorage.getItem('userEmail');
-
-// if (localStorage.getItem('statesArray')) {
-//     let statesArray = JSON.parse(localStorage.getItem('statesArray'));
-//     statesSet = new Set(statesArray);
-// }  
-// else {
-//     statesSet = new Set();
-// }
 
 async function loadSet() {
     let statesArray;
@@ -40,6 +33,9 @@ async function loadMap() {
     })
 }
 
+loadMap();
+configureWebSocket();
+
 function stateClicked(state) {
     if (statesSet.has(state)) {
         deselectState(state);
@@ -66,9 +62,11 @@ function deselectState(state) {
 async function saveStates() {
     const statesArray = Array.from(statesSet);
     localStorage.setItem("statesArray", JSON.stringify(statesArray));
+    const name = localStorage.getItem('userName');
+    broadcastEvent(name);
 
     try {
-        await fetch(`/api/updateList/${email}`, {
+        const result = await fetch(`/api/updateList/${email}`, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(statesArray),
@@ -79,4 +77,25 @@ async function saveStates() {
     }
 }
 
-loadMap();
+// Functionality for peer communication using WebSocket
+function configureWebSocket() {  
+    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+
+    socket.onmessage = async (event) => {
+      const msg = JSON.parse(await event.data.text());
+      displayMsg(msg.name);
+    };
+}
+
+function displayMsg(name) {
+    const messagesEl = document.getElementById('userMessages');
+    if (messagesEl) {
+        messagesEl.innerHTML = `<p class="message">${name} updated their map</p>` + messagesEl.innerHTML;
+    }
+}
+
+function broadcastEvent(name) {
+    const event = {name: name};
+    socket.send(JSON.stringify(event));
+}
