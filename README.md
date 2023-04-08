@@ -339,10 +339,30 @@ store authentication token in a cookie \
 use `uuid` package to randomly generate a unique ID \
 use `bcrypt` package to encrypt passwords
 
-**WebSocket** \
+**WebSockets** \
 an open connection between the client and the server \
 now the server can send data to the client whenever without a request \
 how to create a websocketserver that listens on port 9900: `const socket = new WebSocket('ws://localhost:9900')` \
 use `.send` function to send messages \
 use `.onmessage` function to receive messages \
 use `ping` and `pong` to keep the connections alive 
+
+### React
+Combines JS and HTML into JSX which gets interpreted by Babel \
+Components
+- defined as functions (used to be classes)
+- render function: turns components into HTML elements 
+  - `<Function />`
+  - `ReactDOM.render(hello, document.getElementById('root'))`
+- you can pass in information to components in the form of element properties 
+  - `<Function name="Bob" />
+- State: created by calling the `React.useState` hook function, which returns a variable and a function to update the state
+  - `const [clicked, updateClicked] = React.useState(false)`
+makes the UI react to user input \
+When a component's JSX is rendered, React parses the JSX and creates a list of any references to the component's `state` or `prop` objects \
+React then monitors those objects and if it detects that they have changed, it will call the component's `render` function \
+Hooks
+- allow React function style components to be able to do everything that a class style component can do and more
+- `useState`: used to declare and update state in a function component
+- `useEffect`: used to represent lifecycle events
+- If you specify `[]` as the hook dependency, then it is only called when the component is first rendered
